@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dipto Dey</title>
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="javascript/weatherApi.js"></script>
+        <script src="javascript/app.js"></script>
+    </head>
+    <body class="bg-gray-600 bg-opacity-30 p-2">
+        <!--  main Container -->
+        <div class="flex flex-col  flex-wrap justify-start item-center content-center bg-gray-100
+            lg:flex-row lg:justify-center lg:item-start lg:content-start
+            lg:w-2/4 
+            w-full  mx-auto ">
+            <!-- left section -->
+            <div class="flex flex-col flex-auto flex-wrap justify-start item-center content-center 
+                text-center bg-green-600 p-2 space-y-2 text-black w-full
+                lg:w-2/6 lg:mx-auto">
+
+                <img class="rounded-full h-52 w-42 mx-auto border-4 border-gray-300" src="asset/dp.jpg" alt="profile">
+                <div class="name_designation">
+                    <p class=" font-bold text-3xl text-gray-300">Dipto Dey</p>
+                    <br>
+                    <p >Learn new things and reflect it on work for betterment of myself as well as others.</p>
+                    <br>
+                    <hr >
+                </div>
+                <div class="flex flex-row flex-wrap justify-center item-start">
+                    <span class="iconify" data-icon="fluent:location-48-filled" data-inline="false"></span>
+                    <p class="text-lg font-medium text-gray-300">Address</p>
+                </div>
+
+                <div class="relative mx-auto">
+                    <p id="addressDetails" class="hover:bg-green-300 cursor-pointer" >Kali Bari Point, Modina Market, Sylhet, Bangladesh</p>
+
+
+                    <!-- overlay div -->
+                    <div  id="overlay" class="hidden absolute w-full  text-center top-0 bg-white   rounded-xl 
+                    text-black  text-base font-serif p-2 shadow-inner z-20
+                    flex flex-col"> <!-- used z index so that it is positioned above others -->
+                        
+                        <div class="flex flex-row">
+                            <span class="iconify" data-icon="carbon:satellite-weather" data-inline="false"></span>
+                            <p>Weather Stat</p>
+                            <p id="weather_mode"></p>
+
+                        </div>
+                        <hr>
+                        <div class="flex flex-row">
+                            <p id="temp"></p>
+                            <span class="iconify" data-icon="ri:celsius-fill" data-inline="false"></span>
+                        </div>
+                        <div class="flex flex-row">
+                            <p id="feels_like"></p>
+                            <span class="iconify" data-icon="ri:celsius-fill" data-inline="false"></span>
+                        </div>
+                        <div class="flex flex-row">
+                            <p id="humidity"></p>
+                            <span class="iconify float-left" data-icon="iwwa:humidity" data-inline="false"></span>
+                        </div>
+                    </div>
+                    <!-- overlay div ended-->
+                </div>
+                
+
+
+                <br>
+                <hr >
+                <div class="flex flex-row flex-wrap justify-center item-start">
+                    <p><span class="iconify" data-icon="si-glyph:phone-number" data-inline="false"></span></p>
+                    <p class="text-lg font-medium text-gray-300">Phone Number</p>
+                </div>
+                <p>+8801789627055</p>
+                <br>
+                <hr >
+                <div class="flex flex-row flex-wrap justify-center item-start">
+                    <span class="iconify" data-icon="clarity:email-solid" data-inline="false"></span>
+                    <p class="text-xl font-medium text-gray-300">Email</p>
+                </div>
+                <p>dipdey093@gmail.com</p>
+                <br>
+                <hr >
+                <p class="text-lg font-medium text-gray-300">Websites</p>
+                <div class="flex flex-row flex-wrap justify-center item-start">
+                    <span class="iconify" data-icon="mdi:linkedin" data-inline="false"></span><a class="hover:underline" href="https://www.linkedin.com/in/dipto-dey-755b17196/">Linkedin</a>
+                </div>
+                <div class="flex flex-row flex-wrap justify-center item-start">
+                    <span class="iconify" data-icon="line-md:github" data-inline="false"></span><a class="hover:underline" href="https://github.com/diptodeydip">Github</a>
+                </div>
+                <br>
+                <hr >
+                <div >
+                    <p class="text-lg font-medium text-gray-300">Certificates</p>
+                    <ul class="list-disc list-inside">
+                        <li>Introduction to Git and GitHub (<a class="hover:underline font-medium" href="https://www.coursera.org/account/accomplishments/verify/ZXTDJY9H39XV">Certificate</a>)</li>
+                        <li>Problem Solving (Basic) (<a class="hover:underline font-medium" href="https://www.hackerrank.com/certificates/af22acfce963">Certificate</a>)</li>
+                    </ul>
+                    <br>
+                    <hr >
+                </div>
+                <div >
+                    <p class="text-lg font-medium text-gray-300">Hobbies</p>
+                    <ul class="list-disc list-inside">
+                        <li>Playing Video Games</li>
+                        <li>Cycling</li>
+                        <li>Sightseeing</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- right section -->
+            <div class="flex flex-col flex-wrap flex-auto justify-start item-start content-start 
+                text-left p-2 space-y-5 w-full
+                lg:w-4/6 lg:mx-auto">
+                <!-- education section started -->
+                <div class="w-full">
+                    <div class="flex flex-row">
+                        <br>
+                        <span class="iconify" data-icon="zondicons:education" data-inline="false"></span>
+                        <h3 class="font-bold text-xl">
+                            EDUCATION
+                        </h3>
+                    </div>
+                    <hr class="border-black  mx-auto">
+                    <br> 
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="bsc">
+                        <span id="bsc_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="bsc_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg" >BSc in Computer Science and Engineering</p>
+                    </div>
+                    <div id="bsc_details" class="hidden">
+                        <p >Shahjalal University of Science and Technology</p>
+                        <div class="flex flex-row flex-wrap">
+                            <span class="iconify" data-icon="ic:round-date-range" data-inline="false"></span>2017-2021 
+                            <span class="iconify ml-2" data-icon="ic:round-grade" data-inline="false"></span>CGPA: 3.82 on a scale of 4.00
+                        </div>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="hsc">
+                        <span id="hsc_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="hsc_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg" >Higher Secondary Certificate</p>
+                    </div>
+                    <div id="hsc_details" class="hidden">
+                        <p> Murari Chand College, Sylhet</p>
+                        <div class="flex flex-row flex-wrap">
+                            <span class="iconify" data-icon="ic:round-date-range" data-inline="false"></span>2014-2016 
+                            <span class="iconify ml-2" data-icon="ic:round-grade" data-inline="false"></span>GPA: 5.00 on a scale of 5.00
+                        </div>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="ssc">
+                        <span id="ssc_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="ssc_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Secondary School Certificate</p>
+                    </div>
+                    <div id="ssc_details" class="hidden">
+                        <p>Moulvibazar Govt. High School, Moulvibazar</p>
+                        <div class="flex flex-row flex-wrap">
+                            <span class="iconify" data-icon="ic:round-date-range" data-inline="false"></span>2006-2014 
+                            <span class="iconify ml-2" data-icon="ic:round-grade" data-inline="false"></span>GPA: 5.00 on a scale of 5.00
+                        </div>
+                    </div>
+                </div>
+                <!-- education section ended -->
+                <!-- EXPERIENCE section started -->
+                <div  class="w-full">
+                    <div class="flex flex-row">
+                        <span class="iconify" data-icon="grommet-icons:user-expert" data-inline="false"></span>
+                        <h3 class="font-bold text-xl">
+                            EXPERIENCE
+                        </h3>
+                    </div>
+                    <hr class="border-black  mx-auto">
+                    <br>    
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="Dsi">
+                        <span id="Dsi_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="Dsi_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Dynamic Solution Innovators</p>
+                    </div>
+                    <div id="Dsi_details" class="hidden">
+                        <p>Junior Software Engineer</p>
+                        <p>May 2021 - Present</p>
+                    </div>
+                </div>
+                <!-- EXPERIENCE section ended -->
+                <!-- TECHNICAL SKILLS section started -->
+                <div class="w-full">
+                    <div class="flex flex-row">
+                        <span class="iconify " data-icon="carbon:skill-level" data-inline="false"></span>
+                        <h3 class="font-bold text-xl">
+                            TECHNICAL SKILLS
+                        </h3>
+                    </div>
+                    <hr class="border-black  mx-auto">
+                    <br>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="prog_lang">
+                        <span id="prog_lang_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="prog_lang_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Programming Languages</p>
+                    </div>
+                    <div id="prog_lang_details" class="hidden">
+                        <p>Structured C/C++, Java, Python, SQL</p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="scripting">
+                        <span id="scripting_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="scripting_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Server Side Scripting</p>
+                    </div>
+                    <div id="scripting_details" class="hidden">
+                        <p> PHP, NodeJS (JavaScript)</p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="tools">
+                        <span id="tools_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="tools_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Framework, Libraries and Tools</p>
+                    </div>
+                    <div id="tools_details" class="hidden">
+                        <p> Laravel, Express.js, JQuery, JavaFx, Android Studio, Git</p>
+                    </div>
+                </div>
+                <!-- TECHNICAL SKILLS section ended -->
+                <!-- PROJECTS section started -->
+                <div class="w-full">
+                    <div class="flex flex-row">
+                        <span class="iconify " data-icon="ant-design:project-filled" data-inline="false"></span>
+                        <h3 class="font-bold text-xl">
+                            PROJECTS
+                        </h3>
+                    </div>
+                    <hr class="border-black  mx-auto">
+                    <br>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="App_Usage_Tracker">
+                        <span id="App_Usage_Tracker_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="App_Usage_Tracker_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <span class="iconify float-left" data-icon="ic:round-grade" data-inline="false"></span>
+                        <p class="font-medium text-lg">App Usage Tracker</p>
+                    </div>
+                    <div id="App_Usage_Tracker_details" class="hidden">
+                        <p><a class="text-blue-400 hover:underline" href="https://github.com/diptodeydip/App_Usage_Tracker">[Github]</a>
+                        </p>
+                        <p >An android app that tracks the usage of all installed apps within a smartphone.</p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="word">
+                        <span id="word_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="word_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <span class="iconify float-left" data-icon="ic:round-grade" data-inline="false"></span>
+                        <p class="font-medium text-lg">Word Segmentation</p>
+                    </div>
+                    <div id="word_details" class="hidden">
+                        <p><a class="text-blue-400  hover:underline" href="https://github.com/Partha-Sarker/Bangla-handwritten-word-segmentation-from-document">[Github]</a>
+                        </p>
+                        <p >Segment all the lines from a Bengali handwritten document and afterwards segment words
+                            from those lines.
+                        </p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="land">
+                        <span id="land_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="land_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <span class="iconify float-left" data-icon="ic:round-grade" data-inline="false"></span>
+                        <p class="font-medium text-lg">Land Registry System</p>
+                    </div>
+                    <div id="land_details" class="hidden">
+                        <p><a class="text-blue-400 hover:underline" href="https://github.com/diptodeydip/Land_Registry_using_Hyperledger_Fabric">[Github]</a>
+                        </p>
+                        <p >Activities like transformation of ownership can be performed through this system. It uses concept of blockchain, therefore, these informations will remain safe secured.</p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="complain_box">
+                        <span id="complain_box_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="complain_box_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <span class="iconify float-left" data-icon="ic:round-grade" data-inline="false"></span>
+                        <p class="font-medium text-lg">Digital Complain Box</p>
+                    </div>
+                    <div id="complain_box_details" class="hidden">
+                        <p><a class="text-blue-400 hover:underline" href="https://github.com/diptodeydip/DigitalComplainBox-250">[Github]</a>
+                        </p>
+                        <p >Using this android app one can complain about any problem etc directly to respective authorities so that they can take proper steps to resolve the problem and can give updates.</p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="p2p">
+                        <span id="p2p_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="p2p_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <span class="iconify float-left" data-icon="ic:round-grade" data-inline="false"></span>
+                        <p class="font-medium text-lg">P2P Chat App</p>
+                    </div>
+                    <div id="p2p_details" class="hidden">
+                        <p><a class="text-blue-400 hover:underline" href="https://github.com/diptodeydip/P2p_chat_app_using_Socket_Programming">[Github]</a>
+                        </p>
+                        <p >An android app for chatting and sharing text files with others who are connected in a same
+                            WiFi network.
+                        </p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="stickman">
+                        <span id="stickman_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="stickman_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <span class="iconify float-left" data-icon="ic:round-grade" data-inline="false"></span>
+                        <p class="font-medium text-lg">Flying Stickman</p>
+                    </div>
+                    <div id="stickman_details" class="hidden">
+                        <p><a class="text-blue-400 hover:underline" href="https://github.com/diptodeydip/FlyingStickman-javalabproject-">[Github]</a>
+                        </p>
+                        <p >A simple 2d game.</p>
+                    </div>
+                </div>
+                <!-- PROJECTS section ended -->
+                <!-- EXTRACURRICULAR ACTIVITIES section started -->
+                <div class="w-full">
+                    <div class="flex flex-row">
+                        <span class="iconify " data-icon="carbon:activity" data-inline="false"></span>
+                        <h3 class="font-bold text-xl">
+                            EXTRACURRICULAR ACTIVITIES
+                        </h3>
+                    </div>
+                    <hr class="border-black  mx-auto">
+                    <br> 
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="problem_solve">
+                        <span id="problem_solve_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="problem_solve_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Problem Solving</p>
+                    </div>
+                    <div id="problem_solve_details" class="hidden">
+                        <p> 900+ Solve, StopStalk <a class="text-blue-400 hover:underline" href="https://www.stopstalk.com/user/profile/D_D_D">profile</a>, LightOJ <a class="text-blue-400 hover:underline" href="https://lightoj.com/user/dipdey093">profile</a></p>
+                        <p>Rated <b>Blue</b> at codeforces (<a class="text-blue-400 hover:underline" href="https://codeforces.com/profile/D_D_D">profile</a>)</p>
+                    </div>
+                    <div class="hover:bg-gray-200 p-0.5 shadow-inner cursor-pointer"  id="typing">
+                        <span id="typing_expand" class="iconify animate-pulse float-right" data-icon="akar-icons:circle-plus" data-inline="false"></span>
+                        <span id="typing_collapse" class="iconify animate-pulse float-right hidden" data-icon="akar-icons:circle-minus" data-inline="false"></span>
+                        <p class="font-medium text-lg">Fast Typing</p>
+                    </div>
+                    <div id="typing_details" class="hidden">
+                        <p> <b>TypeMaster</b> at play.typeracer.com (<a class="text-blue-400 hover:underline" href="https://data.typeracer.com/pit/profile?user=d_d_d">profile</a>)</p>
+                    </div>
+                </div>
+                <!-- EXTRACURRICULAR ACTIVITIES section ended -->
+            </div>
+        </div>
+    </body>
+</html>
