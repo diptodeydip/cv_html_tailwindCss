@@ -7,24 +7,18 @@ $(document).ready(function(){
     // handle success
     $("#overlay").show();
 
-    //var line_break = "<br>";
-    var temp = "Temp: "+response.data["main"]["temp"];
-    //var temp_max = "Temp_max: "+response.data["main"]["temp_max"]+line_break;
-    //var temp_min = "Temp_min: "+response.data["main"]["temp_min"]+line_break;
-    var feels_like = "Feels Like :"+response.data["main"]["feels_like"];
-    var humidity = "Humidity: "+response.data["main"]["humidity"];
-    var weather_mode = "("+response.data["weather"][0]["main"]+")";
-  
-    //var city = "City: "+response.data["name"]+line_break;
-    //var sunrise = "Sunrise: "+response.data["sys"]["sunrise"]+line_break;
-    //var sunset = "Sunset: "+response.data["sys"]["sunset"]+line_break;
-    //var country = "Country: "+response.data["sys"]["country"]+line_break;
-  
+    // var temp = "Temp: "+response.data["main"]["temp"];
+    // var feels_like = "Feels Like :"+response.data["main"]["feels_like"];
+    // var humidity = "Humidity: "+response.data["main"]["humidity"];
+    // var weather_mode = "("+response.data["weather"][0]["main"]+")";
 
-   $("#temp").html(temp);
-   $("#feels_like").html(feels_like);
-   $("#humidity").html(humidity);
-   $("#weather_mode").html(weather_mode);
+    //object and array destructuring
+    const {data: {main: {temp}}, data: {main: {feels_like}} , data: {main: {humidity}}, data: {weather: [{main: weather_mode}]}} = response;
+  
+   $("#temp").html("Temp: "+temp);
+   $("#feels_like").html("Feels Like :"+feels_like);
+   $("#humidity").html("Humidity: "+humidity);
+   $("#weather_mode").html("("+weather_mode+")");
    
     setTimeout(myFunction, 5000);
     
